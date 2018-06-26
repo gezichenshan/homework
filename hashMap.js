@@ -10,7 +10,11 @@ function hashMap(length) {
         }
     }
     this.containsKey = function (key) {
-
+        let res = this.get(key)
+        if (res === null) {
+            return false
+        }
+        return true
     }
     this.get = function (value) {
         for (let i = 0; i < this.length; i++) {
@@ -20,7 +24,7 @@ function hashMap(length) {
                 return mod
             }
         }
-        return 'no value specified'
+        return null
     }
     this.handleCollision = function (index, value) {
         for (let i = 1; i < this.length; i++) {
